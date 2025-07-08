@@ -8,3 +8,4 @@ Solutions of exam tasks from the JS Fundamentals course
 - [x] 5. JS Fundamentals Exam - 16 October 2016
 - [x] 6. JS Fundamentals - Sample Exam #1 (Sept 2016)
 - [x] 7. JS Fundamentals - Sample Exam #2 (Sept 2016)
+- [ ] 8. JavaScript Basics Retake - 11 May 2016
