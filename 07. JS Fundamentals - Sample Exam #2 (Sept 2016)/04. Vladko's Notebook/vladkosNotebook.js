@@ -1,50 +1,58 @@
-function vladkoNotebook(input) {
-    input = input.filter(f => 0 < f.length);
-    const data = {}, output = {};
+function main(input) {
+    let obj = {};
 
-    for (const line of input) {
-        const [color, key, value] = line.split('|');
+    for(let line of input){
+        let tokens = line.split("|");
 
-        if (!data[color]) {
-            data[color] = {
-                age: null,
-                name: null,
-                opponents: [],
-                wins: 0,
-                losses: 0
-            };
+        if(!obj.hasOwnProperty(tokens[0])){
+            obj[tokens[0]] = {
+                wins: 1,
+                losses : 1,
+                opponents : []
+            }
         }
 
-        if (key === 'win') {
-            data[color].wins++;
-            data[color].opponents.push(value);
-        } else if (key === 'loss') {
-            data[color].losses++;
-            data[color].opponents.push(value);
-        } else if (key === 'name') {
-            data[color].name = value;
-        } else if (key === 'age') {
-            data[color].age = value;
-        }
-    }
-
-    for (const color in data) {
-        const player = data[color];
-
-        if (player.name !== null && player.age !== null) {
-            output[color] = {
-                age: player.age,
-                name: player.name,
-                opponents: player.opponents.sort((a, b) => a.localeCompare(b)),
-                rank: ((player.wins + 1) / (player.losses + 1)).toFixed(2)
-            };
+        switch(tokens[1]){
+            case "name": {
+                obj[tokens[0]]['name'] = tokens[2];
+                break;
+            }
+            case "age": {
+                obj[tokens[0]]['age'] = tokens[2];
+                break;
+            }
+            case "win":
+                obj[tokens[0]]['wins']++;
+                obj[tokens[0]]['opponents'].push(tokens[2]);
+                break;
+            case "loss":
+                obj[tokens[0]]['losses']++;
+                obj[tokens[0]]['opponents'].push(tokens[2]);
+                break;
         }
     }
 
-    console.log(JSON.stringify(output));
+    for(let color of Object.keys(obj)){
+        obj[color]['opponents'] = obj[color]['opponents'].sort();
+    }
+
+    let outputObj = {};
+
+    for(let color of Object.keys(obj).sort()){
+        if(obj[color]['age'] != undefined && obj[color]['name'] != undefined){
+            outputObj[color] = {
+                age: obj[color]['age'],
+                name: obj[color]['name'],
+                opponents: obj[color]['opponents'],
+                rank: (obj[color]['wins'] / obj[color]['losses']).toFixed(2)
+            }
+        }
+    }
+
+    console.log(JSON.stringify(outputObj));
 }
 
-vladkoNotebook(["purple|age|99",
+main(["purple|age|99",
 "red|age|44",
 "blue|win|pesho",
 "blue|win|mariya",
