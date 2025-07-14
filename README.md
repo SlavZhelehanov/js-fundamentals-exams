@@ -11,4 +11,4 @@ Solutions of exam tasks from the JS Fundamentals course
 - [x] 8. JavaScript Basics Retake - 11 May 2016
 - [ ] 9. JavaScript Basics - 31 January 2016, Task 3: Softuni Forum - 80/100
 - [x] 10. JavaScript Basics - 13 May 2015
-- [ ] 11. JavaScript Basics - 5 April 2015
+- [x] 11. JavaScript Basics - 5 April 2015
