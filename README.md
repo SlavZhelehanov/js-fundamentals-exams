@@ -15,3 +15,4 @@ Solutions of exam tasks from the JS Fundamentals course
 - [ ] 12. JavaScript Basics - 9 January 2015, Task 3: Use Your Chains Buddy - 88/100
 - [x] 13. JavaScript Basics Exam - 24 November 2014
 - [x] 14. JavaScript Basics Exam - 22 November 2014
+- [ ] 15. JavaScript Basics Lab - 14 Nov 2014
