@@ -21,5 +21,39 @@
             <ul></ul>
         </section>
     </div>
+    <script>
+        const text = 'word screammm screech speech wolf'; // This text is example and can be changed
+        const words = text.split(/\s+/);
+        let data = [];
+        const input = document.querySelector('input');
+        const output = document.querySelector('.output>ul');
+
+        input.addEventListener('keyup', event => {
+            const previewSection = document.querySelector('.preview-section');
+            const p = input.value.trim();
+
+            if (event.code === 'Space' && p.length !== 0) {
+                previewSection.innerHTML = "";
+                data = [];
+                words.forEach(w => {
+                    if (w.toLowerCase().includes(p.toLowerCase())) data.push(w);
+                });
+                for (const key in data) {
+                    if (data[key].length !== 0)  {
+                        previewSection.innerHTML += `<p>${data[key]}</p>`;
+                    }
+                }
+                input.value = '';
+            } else if (event.key === 'Enter' && 0 < Object.keys(data).length) {
+                for (const key of data) {
+                    if (key.length !== 0 && !Array.from(output.querySelectorAll('li')).some(el => el.textContent === key)) {
+                        output.innerHTML += `<li>${key}</li>`;
+                    }
+                }
+                previewSection.innerHTML = "";
+                data = [];
+            }
+        });
+    </script>
 </body>
 </html>
