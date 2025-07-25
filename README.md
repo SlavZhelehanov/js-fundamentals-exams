@@ -17,3 +17,4 @@ Solutions of exam tasks from the JS Fundamentals course
 - [x] 14. JavaScript Basics Exam - 22 November 2014
 - [x] 15. JavaScript Basics Lab - 14 Nov 2014
 - [x] 16. JavaScript Basics Exam - 4 September 2014
+- [ ] 17. JavaScript Basics Exam - 29 July 2014
