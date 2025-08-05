@@ -31,7 +31,7 @@ function plasmaGiants(array, cutSize) {
         secondGiant -= minDamage;
         rounds++;
     }
-    
+
     if (firstGiant <= maxThreshold && secondGiant <= maxThreshold) {
         console.log(`Its a draw ${firstGiant} - ${secondGiant}`);
     } else if (firstGiant <= maxThreshold) {
