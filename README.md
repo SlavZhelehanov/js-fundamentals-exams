@@ -23,5 +23,5 @@ Solutions of exam tasks from the JS Fundamentals course
 - [x] 20. JS Fundamentals Exam - 10 February 2019
 - [ ] 21. JS Fundamentals Retake - 16 April 2019
 - [ ] 22. JS Essentials - Exam Preparation - May 2019
-
+- [ ] 23. JS Essentials Exam - 09 June 2019
 
